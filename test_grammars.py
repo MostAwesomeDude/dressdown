@@ -5,6 +5,13 @@ from terml.nodes import termMaker as t
 
 from grammars import grammar
 
+class TestDressdown(TestCase):
+
+    def test_atx_h1(self):
+        i = "# h1"
+        o = [t.H1("h1")]
+        self.assertEqual(grammar(i).dressdown(), o)
+
 class Testgrammar(TestCase):
 
     def test_crlf(self):
